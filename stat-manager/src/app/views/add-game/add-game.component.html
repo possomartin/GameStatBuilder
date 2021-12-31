@@ -1,0 +1,22 @@
+<div class="add-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Add New Game</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-gamepad text-primary">:</i>
+            <input #name class="no-border custom-rounded-pill" type="text" name="name" id="name" placeholder="Name">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-comment-medical text-primary">:</i>
+            <textarea class="description-box no-border custom-rounded-pill" #description name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-image text-primary">:</i>
+            <input #image type="file" name="image" id="image" (change)="onFileSelect($event)">
+        </div>        
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/games">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="addGame(name.value, description.value)">Create</button>
+    </div>
+</div>

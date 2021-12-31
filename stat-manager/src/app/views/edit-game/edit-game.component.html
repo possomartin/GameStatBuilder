@@ -1,0 +1,22 @@
+<div class="update-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Edit Games <br><br>{{selectedGame.name}}</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-gamepad text-primary">:</i>
+            <input #name class="no-border custom-rounded-pill" type="text" name="name" id="name" placeholder="Name" [ngModel]="selectedGame.name">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-comment-medical text-primary">:</i>
+            <textarea class="description-box no-border custom-rounded-pill" #description name="description" id="description" cols="30" rows="10" placeholder="Description" [ngModel]="selectedGame.description"></textarea>
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-image text-primary">:</i>
+            <input #image type="file" name="image" id="image" (change)="onFileSelect($event)">
+        </div>                
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/games">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="updateGame(name.value, description.value)">Update</button>
+    </div>
+</div>

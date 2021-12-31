@@ -1,0 +1,29 @@
+<div class="container login-container custom-rounded-pill no-bg no-border text-primary">
+    <h3>Register</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-font text-primary">:</i>
+            <input #name class="no-border custom-rounded-pill" type="text" name="name" id="name" placeholder="Name">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-bold text-primary">:</i>
+            <input #lastname class="no-border custom-rounded-pill" type="text" name="lastname" id="lastname" placeholder="Lastname">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-user text-primary">:</i>
+            <input #username class="no-border custom-rounded-pill" type="text" name="username" id="username" placeholder="Username">
+        </div>        
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-envelope text-primary">:</i>
+            <input #email class="no-border custom-rounded-pill" type="email" name="email" id="email" placeholder="Email">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-lock text-primary">:</i>
+            <input #password class="no-border custom-rounded-pill" type="password" name="password" id="password" placeholder="Password">
+        </div>
+    </form>
+    <p>Already have an account? <a class="text-link" routerLink="/login">Sig In</a> Now</p>
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" (click)="RegisterUser(name.value, lastname.value, username.value, email.value, password.value)">Sign Up</button>
+    </div>
+</div>

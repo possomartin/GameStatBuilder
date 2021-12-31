@@ -1,0 +1,22 @@
+<div class="edit-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Update GameStat</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-gamepad text-primary">:</i>
+            <select #gameID class="no-border custom-rounded-pill" name="game" id="game">
+                <option *ngFor="let game of games" value={{game._id}}>{{game.name}}</option>
+            </select>
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-meteor text-primary">:</i>
+            <select #boostID class="no-border custom-rounded-pill" name="boost" id="boost">
+                <option *ngFor="let boost of boosts" value= {{boost._id}}>{{boost.value}} | {{boost.statname}} | {{boost.itemname}}</option>
+            </select>
+        </div>            
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/gamestats">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="updateGameStat(gameID.value, boostID.value)">Update</button>
+    </div>
+</div>

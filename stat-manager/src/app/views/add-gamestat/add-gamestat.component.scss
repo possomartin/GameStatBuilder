@@ -1,0 +1,47 @@
+@import '../../../main-styles.scss';
+
+
+.add-container
+{
+    margin: 80px auto;
+    padding: 40px 20px;
+
+    justify-content: center;
+
+    h3
+    {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 600px;
+    }
+}
+
+input
+{
+    padding: 5px 15px 5px 15px;
+    margin: 20px auto;
+}
+
+select
+{
+    padding: 5px 15px 5px 15px;
+    margin: 20px;
+}
+
+.icon-container
+{
+    align-items: center;
+}
+
+i
+{
+    margin: 0 10px;
+    padding: 0 10px;
+}
+
+.buttons
+{
+    margin-top: 10px;
+    justify-content: space-around;
+}

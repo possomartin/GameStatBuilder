@@ -1,0 +1,30 @@
+<div class="edit-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Edit Item <br><br>{{selectedItem.name}}</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-cookie-bite text-primary">:</i>
+            <input #name class="no-border custom-rounded-pill" type="text" name="name" id="name" placeholder="Name" [ngModel]="selectedItem.name">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-sort-amount-down text-primary">:</i>
+            <select #categoryID class="no-border custom-rounded-pill" name="category" id="category">
+                <option *ngFor="let category of categories" value={{category._id}}>{{category.name}}</option>
+            </select>
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-gamepad text-primary">:</i>
+            <select #gameID class="no-border custom-rounded-pill" name="game" id="game">
+                <option *ngFor="let game of games" value={{game._id}}>{{game.name}}</option>
+            </select>
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-image text-primary">:</i>
+            <input #image type="file" name="image" id="image" (change)="onFileSelect($event)">
+        </div>          
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/items">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="updateItem(categoryID.value, gameID.value, name.value)">Update</button>
+    </div>
+</div>

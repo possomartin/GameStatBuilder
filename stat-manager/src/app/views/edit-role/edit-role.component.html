@@ -1,0 +1,14 @@
+<div class="update-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Edit Role <br><br>{{selectedRole.name}}</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-user-tag text-primary">:</i>
+            <input #name class="no-border custom-rounded-pill" type="text" name="name" id="name" placeholder="Name" [ngModel]="selectedRole.name">
+        </div>
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/roles">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="updateRole(name.value)">Update</button>
+    </div>
+</div>

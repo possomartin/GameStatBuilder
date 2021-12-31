@@ -1,0 +1,26 @@
+<div class="edit-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Edit Boost</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-cookie-bite text-primary">:</i>
+            <select #itemID class="no-border custom-rounded-pill" name="item" id="item">
+                <option *ngFor="let item of items" value={{item._id}}>{{item.name}}</option>
+            </select>
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-star-half-alt text-primary">:</i>
+            <select #statID class="no-border custom-rounded-pill" name="stat" id="stat">
+                <option *ngFor="let stat of stats" value={{stat._id}}>{{stat.name}}</option>
+            </select>
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-heart text-primary">:</i>
+            <input #Value class="no-border custom-rounded-pill" type="number" name="value" id="value" placeholder="Value" [(ngModel)]="selectedBoost.value">
+        </div>              
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/boosts">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="updateBoost(itemID.value, statID.value, Value.value)">Create</button>
+    </div>
+</div>

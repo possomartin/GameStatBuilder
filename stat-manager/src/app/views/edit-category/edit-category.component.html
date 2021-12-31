@@ -1,0 +1,14 @@
+<div class="update-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Edit User <br><br>{{selectedCategory.username}}</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-font text-primary">:</i>
+            <input #name class="no-border custom-rounded-pill" type="text" name="name" id="name" placeholder="Name" [ngModel]="selectedCategory.name">
+        </div>
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/categories">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="updateCategory(name.value)">Update</button>
+    </div>
+</div>

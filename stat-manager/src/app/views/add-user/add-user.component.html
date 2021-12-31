@@ -1,0 +1,37 @@
+<div class="add-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Add New User</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-font text-primary">:</i>
+            <input #name class="no-border custom-rounded-pill" type="text" name="name" id="name" placeholder="Name">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-bold text-primary">:</i>
+            <input #lastname class="no-border custom-rounded-pill" type="text" name="lastname" id="lastname" placeholder="Lastname">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-user text-primary">:</i>
+            <input #username class="no-border custom-rounded-pill" type="text" name="username" id="username" placeholder="Username">
+        </div>        
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-envelope text-primary">:</i>
+            <input #email class="no-border custom-rounded-pill" type="email" name="email" id="email" placeholder="Email">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-lock text-primary">:</i>
+            <input #password class="no-border custom-rounded-pill" type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-user-tag text-primary">:</i>
+            <select #roleID class="no-border custom-rounded-pill" name="Role" id="role">
+                
+                <option *ngFor="let role of roles" value={{role._id}}>{{role.name}}</option>
+            </select>
+        </div>
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/users">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="addUser(name.value, lastname.value, username.value, email.value, password.value, roleID.value)">Create</button>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+@import '../../../main-styles.scss';
+
+.home-container
+{
+    padding-top: 0;
+    margin-top: 0;
+    align-items: center;
+}
+
+.title
+{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    max-width: 1280px;
+
+    h2
+    {
+        letter-spacing: 2px;
+    }
+}
+
+.title::after
+{
+    content: '';
+    width: fit-content;
+    min-width: 1000px;
+    border: 1px solid $light;
+    margin-left: 10px;
+}
+
+.items-container
+{
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.games
+{
+    justify-content: center;
+    align-items: center;
+}
+
+.game-card
+{
+    max-width: 128px;
+    justify-content: center;
+    text-align: center;
+    transition: transform ease 2s;
+
+    margin: 10px;
+    padding: 10px;
+
+    img
+    {
+        border-radius: 20px;
+    }
+
+    &:hover
+    {
+        transform: scale(0.8);
+        opacity: 0.8;
+
+        h3
+        {
+            color: $secondary;
+        }
+
+        background: lightgray;
+    }
+}
+
+.stats
+{
+    justify-content: center;
+    align-items: center;
+}
+
+.select-options-container
+{
+    margin: 40px 0px;
+}
+
+label
+{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.categories-options
+{
+    margin: 0px 20px;
+    width: 200px;
+    padding: 6px 0px;
+    text-align: center;
+}
+
+.btn-container
+{
+    margin: 40px 0px;
+}
+
+.custom-btn
+{
+    padding: 5px 20px;
+    font-size: 20px;
+}
+
+.results-container
+{
+    justify-content: center;
+    align-items: center;
+}
+
+.is-active
+{
+    opacity: 0.7;
+    background: lightgrey;
+}

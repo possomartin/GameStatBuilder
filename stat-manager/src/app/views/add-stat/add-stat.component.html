@@ -1,0 +1,14 @@
+<div class="add-container container no-bg no-border custom-rounded-pill vertical text-primary">
+    <h3>Add New Stat</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-star-half-alt text-primary">:</i>
+            <input #name class="no-border custom-rounded-pill" type="text" name="name" id="name" placeholder="Name">
+        </div>
+    </form>
+
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" routerLink="/admin/stats">Cancel</button>
+        <button class="btn no-border custom-rounded-pill" (click)="addStat(name.value)">Create</button>
+    </div>
+</div>

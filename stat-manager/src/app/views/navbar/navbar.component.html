@@ -1,0 +1,30 @@
+<div class="menu-container">
+  <nav class="menu horizontal">
+    <div class="logo">
+      <a href="#"><h2>GameStat</h2></a>
+    </div>
+    <ul class="horizontal" *ngIf="isUserAdmin">
+      <li><a href="/gamestats/home">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a class="dropdown-arrow" href="/">Admin</a>
+        <ul class="sub-menus">
+          <li><a routerLink="/admin/games">Games</a></li>
+          <li><a routerLink="/admin/gamestats">Game Stats</a></li>
+          <li><a routerLink="/admin/categories">Categories</a></li>
+          <li><a routerLink="/admin/boosts">Boosts</a></li>
+          <li><a routerLink="/admin/stats">Stats</a></li>
+          <li><a routerLink="/admin/items">Items</a></li>
+          <li><a routerLink="/admin/users">Users</a></li>
+          <li><a routerLink="/admin/roles">Roles</a></li>
+        </ul>
+      </li>
+      <li><a style="color: #ff5a5f;"href="#" (click)="onLogOutSumbit()">Sing Out</a></li>
+    </ul>
+
+    <ul class="horizontal" *ngIf="!isUserAdmin">
+      <li><a href="/gamestats/home">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a style="color: #ff5a5f;"href="#" (click)="onLogOutSumbit()">Sing Out</a></li>
+    </ul>    
+  </nav>
+</div>

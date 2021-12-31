@@ -1,0 +1,19 @@
+<div class="container login-container custom-rounded-pill no-bg no-border text-primary">
+    <h3>Login</h3>
+    <form class="vertical" action="">
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-user text-primary">:</i>
+            <input #username class="no-border custom-rounded-pill" type="text" name="username" id="username" placeholder="Username">
+        </div>        
+        <div class="icon-container horizontal">
+            <i class="fa-solid fa-lock text-primary">:</i>
+            <input #password class="no-border custom-rounded-pill" type="password" name="password" id="password" placeholder="Password">
+        </div>
+    </form>
+    <p>Don't Have An Account Yet?</p>
+    <p><a class="text-link" routerLink="/register">Sing Up</a></p>
+    <p>Now</p>
+    <div class="buttons horizontal">
+        <button class="btn no-border custom-rounded-pill" (click)="OnLoginSubmit(username.value, password.value)">SIGN IN</button>
+    </div>
+</div>

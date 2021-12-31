@@ -1,0 +1,37 @@
+<div class="container vertical">
+    <section class="search-bar-container horizontal">
+        <div class="search-bar vertical custom-rounded-pill no-bg no-border text-primary">
+            <h3>Games</h3>
+            <form action="">
+                <input class="custom-rounded-pill no-border" type="search" name="usearch" id="usearch" placeholder="Looking for something?">
+                <button class="btn custom-rounded-pill no-border">Search</button>
+            </form>
+        </div>
+        <div class="add-new vertical no-bg no-border custom-rounded-pill text-primary">
+            <h3>Add a new Game</h3>
+            <button class="btn custom-rounded-pill no-border" routerLink="/admin/add-game"><i class="fa fa-plus"></i> Create New</button>
+        </div>
+    </section>
+    <section class="table-container no-bg no-border custom-rounded-pill">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Options</th>
+            </tr>
+            <tr *ngFor="let game of games">
+                <td>{{game._id}}</td>
+                <td>{{game.name}}</td>
+                <td>{{game.description}}</td>
+                <td><img src={{game.imagePath}} alt={{game.name}} width="128px" height="128px"></td>
+                <td class="admin-options horizontal">
+                    <a class ="btn custom-rounded-pill" [routerLink]="['/admin/games', game._id, 'edit-game']"><i class="fa fa-edit"></i></a>
+                    <a class ="btn custom-rounded-pill" (click)="deleteGame(game._id)"><i class="fa fa-trash"></i></a>
+                </td>                
+            </tr>                      
+        </table>
+    </section>
+
+</div>

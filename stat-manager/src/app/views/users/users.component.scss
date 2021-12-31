@@ -1,0 +1,43 @@
+@import '../../../main-styles.scss';
+.container
+{
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.search-bar-container
+{
+    justify-content: space-around;
+}
+
+.search-bar
+{
+    margin: 0 50px;
+    padding: 5px 50px 10px 50px;
+}
+
+.add-new
+{
+    margin: 0 50px;
+    padding: 5px 50px 10px 50px;
+}
+
+input
+{
+    padding: 5px 15px 5px 15px;
+    margin-right: 30px;
+}
+
+.table-container
+{
+    margin: 40px 20px;
+    padding: 20px 10px;
+    max-width: fit-content;
+}
+
+.admin-options
+{
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+}

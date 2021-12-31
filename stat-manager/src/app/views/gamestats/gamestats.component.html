@@ -1,0 +1,39 @@
+<div class="container vertical">
+    <section class="search-bar-container horizontal">
+        <div class="search-bar vertical custom-rounded-pill no-bg no-border text-primary">
+            <h3>GameStats</h3>
+            <form action="">
+                <input class="custom-rounded-pill no-border" type="search" name="usearch" id="usearch" placeholder="Looking for something?">
+                <button class="btn custom-rounded-pill no-border">Search</button>
+            </form>
+        </div>
+        <div class="add-new vertical no-bg no-border custom-rounded-pill text-primary">
+            <h3>Add a new GameStats</h3>
+            <button class="btn custom-rounded-pill no-border" routerLink="/admin/add-gamestat"><i class="fa fa-plus"></i> Create New</button>
+        </div>
+    </section>
+    <section class="table-container no-bg no-border custom-rounded-pill">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Game</th>
+                <th>Item</th>
+                <th>Stat</th>
+                <th>Value</th>
+                <th>Options</th>
+            </tr>
+            <tr *ngFor="let gamestat of gamestats">
+                <td>{{gamestat._id}}</td>
+                <td>{{gamestat.gamename}}</td>
+                <td>{{gamestat.itemname}}</td>
+                <td>{{gamestat.statname}}</td>
+                <td>{{gamestat.value}}</td>
+                <td class="admin-options horizontal">
+                    <a class ="btn custom-rounded-pill" [routerLink]="['/admin/gamestats', gamestat._id, 'edit-gamestat']"><i class="fa fa-edit"></i></a>
+                    <a class ="btn custom-rounded-pill" (click)="deleteGameStat(gamestat._id)"><i class="fa fa-trash"></i></a>
+                </td>                
+            </tr>                      
+        </table>
+    </section>
+
+</div>

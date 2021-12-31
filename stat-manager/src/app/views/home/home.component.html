@@ -1,0 +1,57 @@
+<div class="home-container vertical">
+    <section class="header">
+        <div class="banner">
+            <img src="https://64.media.tumblr.com/729a29b31ff82925d05f9a20323f6890/401446786e80fca7-5c/s1280x1920/b9b9114a9515317080918d5e991b883f43dbe31d.png" alt="NEON THEME HEADER">
+        </div>
+    </section>
+    <section class="games vertical">
+        <div class="title horizontal">
+            <h2 class="text-primary">GAMES</h2>
+        </div>
+
+        <div class="items-container horizontal">
+            <a *ngFor="let game of Games" [routerLink]="['/gamestats/home', game._id]" routerLinkActive="is-active">
+                <div class="game-card vertical no-bg no-border custom-rounded-pill">
+                    <img src={{game.imagePath}} 
+                    alt={{game.name}} height="128px" width="128px">
+                    <h3 class="text-primary">{{game.name}}</h3>
+                </div> 
+            </a>
+        </div>
+    </section>
+    <section class="stats vertical">
+        <div class="title horizontal">
+            <h2 class="text-primary">SELECT STATS</h2>
+        </div>
+        <div class="select-options-container">
+            <label class="text-primary" for="category">Choose a category: </label>
+            <select #selected (change)="ChangedOption(selected.value)" class="categories-options no-bg no-border custom-rounded-pill" name="category" id="category">
+                <option *ngFor="let category of Categories" value={{category._id}}>{{category.name}}</option>
+            </select>
+        </div>
+        <div class="items-container horizontal">
+            <a *ngFor="let item of tempList" [routerLink]="['/gamestats/home',SelectedGameId, item._id]" routerLinkActive="is-active">
+                <div class="game-card vertical no-bg no-border custom-rounded-pill">
+                    <img src= {{item.imagePath}}
+                    alt="Game image" height="128px" width="128px">
+                    <h3 class="text-primary">{{item.name}}</h3>
+                </div>
+            </a> 
+        </div>
+        <div class="btn-container">
+            <button class="custom-btn btn no-border no-bg custom-rounded-pill" (click)="CalculateBestOption()">CALCULATE</button>
+        </div>
+    </section>
+    <section class="results-container vertical">
+        <div class="title horizontal">
+            <h2 class="text-primary">Best Options</h2>
+        </div>
+        <div class="items-container horizontal">
+            <div class="game-card vertical no-bg no-border custom-rounded-pill" *ngFor="let result of Results">
+                <img src={{result.imagePath}}
+                alt="Game image" height="128px" width="128px">
+                <h2 class="text-primary">{{result.name}}</h2>
+            </div>                
+        </div>        
+    </section>
+</div>
